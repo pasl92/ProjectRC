@@ -1,0 +1,234 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="RcDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="dostawa">
+          <Key>
+            <PropertyRef Name="id_dostawa" />
+          </Key>
+          <Property Name="id_dostawa" Type="int" Nullable="false" />
+          <Property Name="nazwa" Type="varchar" MaxLength="40" />
+          <Property Name="cena" Type="money" />
+        </EntityType>
+        <EntityType Name="klienci">
+          <Key>
+            <PropertyRef Name="id_klienci" />
+          </Key>
+          <Property Name="id_klienci" Type="int" Nullable="false" />
+          <Property Name="imie" Type="varchar" MaxLength="30" />
+          <Property Name="nazwisko" Type="varchar" MaxLength="30" />
+          <Property Name="nr_tel" Type="int" />
+        </EntityType>
+        <EntityType Name="produkty">
+          <Key>
+            <PropertyRef Name="id_produktu" />
+          </Key>
+          <Property Name="id_produktu" Type="int" Nullable="false" />
+          <Property Name="cena" Type="money" />
+          <Property Name="koszt_zakup" Type="money" />
+          <Property Name="nazwa" Type="varchar" MaxLength="40" />
+        </EntityType>
+        <EntityType Name="zamowienia">
+          <Key>
+            <PropertyRef Name="id_zamowienia" />
+          </Key>
+          <Property Name="id_zamowienia" Type="int" Nullable="false" />
+          <Property Name="id_produktu" Type="int" />
+          <Property Name="id_klienta" Type="int" />
+          <Property Name="rabat" Type="decimal" Precision="2" Scale="2" />
+          <Property Name="data_zakupu" Type="datetime" />
+        </EntityType>
+        <Association Name="FK__zamowieni__id_kl__286302EC">
+          <End Role="klienci" Type="Self.klienci" Multiplicity="0..1" />
+          <End Role="zamowienia" Type="Self.zamowienia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="klienci">
+              <PropertyRef Name="id_klienci" />
+            </Principal>
+            <Dependent Role="zamowienia">
+              <PropertyRef Name="id_klienta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__zamowieni__id_pr__276EDEB3">
+          <End Role="produkty" Type="Self.produkty" Multiplicity="0..1" />
+          <End Role="zamowienia" Type="Self.zamowienia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="produkty">
+              <PropertyRef Name="id_produktu" />
+            </Principal>
+            <Dependent Role="zamowienia">
+              <PropertyRef Name="id_produktu" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="RcDBModelStoreContainer">
+          <EntitySet Name="dostawa" EntityType="Self.dostawa" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="klienci" EntityType="Self.klienci" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="produkty" EntityType="Self.produkty" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="zamowienia" EntityType="Self.zamowienia" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__zamowieni__id_kl__286302EC" Association="Self.FK__zamowieni__id_kl__286302EC">
+            <End Role="klienci" EntitySet="klienci" />
+            <End Role="zamowienia" EntitySet="zamowienia" />
+          </AssociationSet>
+          <AssociationSet Name="FK__zamowieni__id_pr__276EDEB3" Association="Self.FK__zamowieni__id_pr__276EDEB3">
+            <End Role="produkty" EntitySet="produkty" />
+            <End Role="zamowienia" EntitySet="zamowienia" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="RcDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="dostawa">
+          <Key>
+            <PropertyRef Name="id_dostawa" />
+          </Key>
+          <Property Name="id_dostawa" Type="Int32" Nullable="false" />
+          <Property Name="nazwa" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="cena" Type="Decimal" Precision="19" Scale="4" />
+        </EntityType>
+        <EntityType Name="klienci">
+          <Key>
+            <PropertyRef Name="id_klienci" />
+          </Key>
+          <Property Name="id_klienci" Type="Int32" Nullable="false" />
+          <Property Name="imie" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="nazwisko" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="nr_tel" Type="Int32" />
+          <NavigationProperty Name="zamowienia" Relationship="Self.FK__zamowieni__id_kl__286302EC" FromRole="klienci" ToRole="zamowienia" />
+        </EntityType>
+        <EntityType Name="produkty">
+          <Key>
+            <PropertyRef Name="id_produktu" />
+          </Key>
+          <Property Name="id_produktu" Type="Int32" Nullable="false" />
+          <Property Name="cena" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="koszt_zakup" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="nazwa" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="zamowienia" Relationship="Self.FK__zamowieni__id_pr__276EDEB3" FromRole="produkty" ToRole="zamowienia" />
+        </EntityType>
+        <EntityType Name="zamowienia">
+          <Key>
+            <PropertyRef Name="id_zamowienia" />
+          </Key>
+          <Property Name="id_zamowienia" Type="Int32" Nullable="false" />
+          <Property Name="id_produktu" Type="Int32" />
+          <Property Name="id_klienta" Type="Int32" />
+          <Property Name="rabat" Type="Decimal" Precision="2" Scale="2" />
+          <Property Name="data_zakupu" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="klienci" Relationship="Self.FK__zamowieni__id_kl__286302EC" FromRole="zamowienia" ToRole="klienci" />
+          <NavigationProperty Name="produkty" Relationship="Self.FK__zamowieni__id_pr__276EDEB3" FromRole="zamowienia" ToRole="produkty" />
+        </EntityType>
+        <Association Name="FK__zamowieni__id_kl__286302EC">
+          <End Role="klienci" Type="Self.klienci" Multiplicity="0..1" />
+          <End Role="zamowienia" Type="Self.zamowienia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="klienci">
+              <PropertyRef Name="id_klienci" />
+            </Principal>
+            <Dependent Role="zamowienia">
+              <PropertyRef Name="id_klienta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__zamowieni__id_pr__276EDEB3">
+          <End Role="produkty" Type="Self.produkty" Multiplicity="0..1" />
+          <End Role="zamowienia" Type="Self.zamowienia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="produkty">
+              <PropertyRef Name="id_produktu" />
+            </Principal>
+            <Dependent Role="zamowienia">
+              <PropertyRef Name="id_produktu" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="RcDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="dostawa" EntityType="Self.dostawa" />
+          <EntitySet Name="klienci" EntityType="Self.klienci" />
+          <EntitySet Name="produkty" EntityType="Self.produkty" />
+          <EntitySet Name="zamowienia" EntityType="Self.zamowienia" />
+          <AssociationSet Name="FK__zamowieni__id_kl__286302EC" Association="Self.FK__zamowieni__id_kl__286302EC">
+            <End Role="klienci" EntitySet="klienci" />
+            <End Role="zamowienia" EntitySet="zamowienia" />
+          </AssociationSet>
+          <AssociationSet Name="FK__zamowieni__id_pr__276EDEB3" Association="Self.FK__zamowieni__id_pr__276EDEB3">
+            <End Role="produkty" EntitySet="produkty" />
+            <End Role="zamowienia" EntitySet="zamowienia" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="RcDBModelStoreContainer" CdmEntityContainer="RcDBEntities">
+          <EntitySetMapping Name="dostawa">
+            <EntityTypeMapping TypeName="RcDBModel.dostawa">
+              <MappingFragment StoreEntitySet="dostawa">
+                <ScalarProperty Name="id_dostawa" ColumnName="id_dostawa" />
+                <ScalarProperty Name="nazwa" ColumnName="nazwa" />
+                <ScalarProperty Name="cena" ColumnName="cena" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="klienci">
+            <EntityTypeMapping TypeName="RcDBModel.klienci">
+              <MappingFragment StoreEntitySet="klienci">
+                <ScalarProperty Name="id_klienci" ColumnName="id_klienci" />
+                <ScalarProperty Name="imie" ColumnName="imie" />
+                <ScalarProperty Name="nazwisko" ColumnName="nazwisko" />
+                <ScalarProperty Name="nr_tel" ColumnName="nr_tel" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="produkty">
+            <EntityTypeMapping TypeName="RcDBModel.produkty">
+              <MappingFragment StoreEntitySet="produkty">
+                <ScalarProperty Name="id_produktu" ColumnName="id_produktu" />
+                <ScalarProperty Name="cena" ColumnName="cena" />
+                <ScalarProperty Name="koszt_zakup" ColumnName="koszt_zakup" />
+                <ScalarProperty Name="nazwa" ColumnName="nazwa" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="zamowienia">
+            <EntityTypeMapping TypeName="RcDBModel.zamowienia">
+              <MappingFragment StoreEntitySet="zamowienia">
+                <ScalarProperty Name="id_zamowienia" ColumnName="id_zamowienia" />
+                <ScalarProperty Name="id_produktu" ColumnName="id_produktu" />
+                <ScalarProperty Name="id_klienta" ColumnName="id_klienta" />
+                <ScalarProperty Name="rabat" ColumnName="rabat" />
+                <ScalarProperty Name="data_zakupu" ColumnName="data_zakupu" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
