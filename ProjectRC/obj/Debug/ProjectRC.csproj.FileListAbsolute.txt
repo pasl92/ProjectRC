@@ -16,3 +16,8 @@ C:\Users\PC\source\repos\ProjectRC\ProjectRC\obj\Debug\ProjectRC.csproj.Generate
 C:\Users\PC\source\repos\ProjectRC\ProjectRC\obj\Debug\ProjectRC.csproj.CoreCompileInputs.cache
 C:\Users\PC\source\repos\ProjectRC\ProjectRC\obj\Debug\ProjectRC.exe
 C:\Users\PC\source\repos\ProjectRC\ProjectRC\obj\Debug\ProjectRC.pdb
+C:\Users\PC\source\repos\ProjectRC\ProjectRC\bin\Debug\EntityFramework.dll
+C:\Users\PC\source\repos\ProjectRC\ProjectRC\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\PC\source\repos\ProjectRC\ProjectRC\bin\Debug\EntityFramework.xml
+C:\Users\PC\source\repos\ProjectRC\ProjectRC\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\PC\source\repos\ProjectRC\ProjectRC\obj\Debug\ProjectRC.csproj.CopyComplete
