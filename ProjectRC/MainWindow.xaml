@@ -5,13 +5,46 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProjectRC"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="RC Shop" ResizeMode="NoResize" Height="450" Width="800" BorderBrush="#FF514E4E" Background="Black" OpacityMask="#FF575555">
     <Grid>
-        
-        <Button Content="Klienci" HorizontalAlignment="Left" Margin="143,112,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
-        <Button Content="Produkty" HorizontalAlignment="Left" Margin="439,117,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_2"/>
-        <Button Content="Dostawa" HorizontalAlignment="Left" Margin="143,244,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_3"/>
-        <Button Content="Zamowienia" HorizontalAlignment="Left" Margin="439,249,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_4"/>
+
+
+        <Image Source="Wed-SavoyaAct-3.jpg" Stretch="Fill" OpacityMask="Black"/>
+
+        <Button Content="Klienci" HorizontalAlignment="Left" Margin="250,65,0,0" VerticalAlignment="Top" Width="118" Click="Button_Click_1" FontWeight="Bold" Height="50" Foreground="Black" OpacityMask="Black" FontSize="22" UseLayoutRounding="False">
+            <Button.Background>
+                <ImageBrush ImageSource="Wed-SavoyaAct-3.jpg" Stretch="None"/>
+            </Button.Background>
+        </Button>
+        <Button Content="Produkty" HorizontalAlignment="Left" Margin="56,65,0,0" VerticalAlignment="Top" Width="141" Click="Button_Click_2" FontWeight="Bold" Height="50" FontSize="22" ScrollViewer.CanContentScroll="True">
+            <Button.Background>
+                <ImageBrush Stretch="None" TileMode="FlipXY" ImageSource="Wed-SavoyaAct-3.jpg"/>
+            </Button.Background>
+        </Button>
+        <Button Content="Dostawa" HorizontalAlignment="Left" Margin="250,161,0,0" VerticalAlignment="Top" Width="118" Click="Button_Click_3" FontWeight="Bold" Height="66" FontSize="22">
+            <Button.Background>
+                <ImageBrush ImageSource="Wed-SavoyaAct-3.jpg" Stretch="None"/>
+            </Button.Background>
+        </Button>
+        <Button Content="Zamowienia" HorizontalAlignment="Left" Margin="56,161,0,0" VerticalAlignment="Top" Width="141" Click="Button_Click_4" FontWeight="Bold" Height="66" FontSize="22">
+            <Button.Background>
+                <ImageBrush ImageSource="Wed-SavoyaAct-3.jpg" Stretch="None"/>
+            </Button.Background>
+        </Button>
+        <TextBox HorizontalAlignment="Left" Height="97" Margin="108,285,0,0" TextWrapping="Wrap" Text="RC SHOP" VerticalAlignment="Top" Width="398" FontSize="72" TextChanged="TextBox_TextChanged" Foreground="#FFAEC522" Background="{x:Null}" FontFamily="Gill Sans Ultra Bold">
+            <TextBox.Effect>
+                <BlurEffect/>
+            </TextBox.Effect>
+            <TextBox.CaretBrush>
+                <ImageBrush/>
+            </TextBox.CaretBrush>
+            <TextBox.SelectionBrush>
+                <ImageBrush/>
+            </TextBox.SelectionBrush>
+            <TextBox.BorderBrush>
+                <ImageBrush/>
+            </TextBox.BorderBrush>
+        </TextBox>
 
     </Grid>
 </Window>
