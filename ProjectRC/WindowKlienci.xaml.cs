@@ -45,5 +45,10 @@ namespace ProjectRC
             // to use the DbSet<T> as a binding source.   
             custViewSource.Source = contextKlienci.klienci.Local;
         }
+
+        private void klienciDataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }

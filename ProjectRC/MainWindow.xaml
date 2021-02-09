@@ -5,46 +5,44 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProjectRC"
         mc:Ignorable="d"
-        Title="RC Shop" ResizeMode="NoResize" Height="450" Width="800" BorderBrush="#FF514E4E" Background="Black" OpacityMask="#FF575555">
+        WindowStartupLocation="CenterScreen"
+        Title="RC Shop"  ResizeMode="NoResize"  Height="450" Width="800" BorderBrush="#FF514E4E" Background="Black" OpacityMask="#FF575555" Icon="logo.ico">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="66*"/>
+            <ColumnDefinition Width="73*"/>
+            <ColumnDefinition Width="420*"/>
+            <ColumnDefinition Width="235*"/>
+        </Grid.ColumnDefinitions>
 
 
-        <Image Source="Wed-SavoyaAct-3.jpg" Stretch="Fill" OpacityMask="Black"/>
+        <Image Source="Wed-SavoyaAct-3.jpg"  Stretch="Fill" OpacityMask="Black" Grid.ColumnSpan="4"/>
 
-        <Button Content="Klienci" HorizontalAlignment="Left" Margin="250,65,0,0" VerticalAlignment="Top" Width="118" Click="Button_Click_1" FontWeight="Bold" Height="50" Foreground="Black" OpacityMask="Black" FontSize="22" UseLayoutRounding="False">
+        <Button Content="Klienci" BorderBrush="YellowGreen"  HorizontalAlignment="Left" Margin="110.902,65,0,0" VerticalAlignment="Top" Width="118" Click="Button_Click_1" FontWeight="Bold" Height="50" Foreground="Black" OpacityMask="Black" FontSize="22" UseLayoutRounding="False" Grid.Column="2">
             <Button.Background>
                 <ImageBrush ImageSource="Wed-SavoyaAct-3.jpg" Stretch="None"/>
             </Button.Background>
         </Button>
-        <Button Content="Produkty" HorizontalAlignment="Left" Margin="56,65,0,0" VerticalAlignment="Top" Width="141" Click="Button_Click_2" FontWeight="Bold" Height="50" FontSize="22" ScrollViewer.CanContentScroll="True">
+        <Button Content="Produkty" BorderBrush="YellowGreen" HorizontalAlignment="Left" Margin="56,65,0,0" VerticalAlignment="Top" Width="141" Click="Button_Click_2" FontWeight="Bold" Height="50" FontSize="22" ScrollViewer.CanContentScroll="True" Grid.ColumnSpan="3">
             <Button.Background>
                 <ImageBrush Stretch="None" TileMode="FlipXY" ImageSource="Wed-SavoyaAct-3.jpg"/>
             </Button.Background>
         </Button>
-        <Button Content="Dostawa" HorizontalAlignment="Left" Margin="250,161,0,0" VerticalAlignment="Top" Width="118" Click="Button_Click_3" FontWeight="Bold" Height="66" FontSize="22">
+        <Button Content="Dostawa" BorderBrush="YellowGreen" HorizontalAlignment="Left" Margin="110.895,161,0,0" VerticalAlignment="Top" Width="118" Click="Button_Click_3" FontWeight="Bold" Height="66" FontSize="22" Grid.Column="2">
             <Button.Background>
                 <ImageBrush ImageSource="Wed-SavoyaAct-3.jpg" Stretch="None"/>
             </Button.Background>
         </Button>
-        <Button Content="Zamowienia" HorizontalAlignment="Left" Margin="56,161,0,0" VerticalAlignment="Top" Width="141" Click="Button_Click_4" FontWeight="Bold" Height="66" FontSize="22">
+        <Button Content="Zamówienia" BorderBrush="YellowGreen" HorizontalAlignment="Left" Margin="56,161,0,0" VerticalAlignment="Top" Width="141" Click="Button_Click_4" FontWeight="Bold" Height="66" FontSize="22" Grid.ColumnSpan="3">
             <Button.Background>
                 <ImageBrush ImageSource="Wed-SavoyaAct-3.jpg" Stretch="None"/>
             </Button.Background>
         </Button>
-        <TextBox HorizontalAlignment="Left" Height="97" Margin="108,285,0,0" TextWrapping="Wrap" Text="RC SHOP" VerticalAlignment="Top" Width="398" FontSize="72" TextChanged="TextBox_TextChanged" Foreground="#FFAEC522" Background="{x:Null}" FontFamily="Gill Sans Ultra Bold">
-            <TextBox.Effect>
+        <Label Content="RC SHOP" HorizontalAlignment="Left" Margin="64,286,0,0" VerticalAlignment="Top" Height="102" Width="554" FontSize="72" FontWeight="Bold" Foreground="#FFAECA33" FontFamily="Gill Sans Ultra Bold" Grid.ColumnSpan="3" Grid.Column="1">
+            <Label.Effect>
                 <BlurEffect/>
-            </TextBox.Effect>
-            <TextBox.CaretBrush>
-                <ImageBrush/>
-            </TextBox.CaretBrush>
-            <TextBox.SelectionBrush>
-                <ImageBrush/>
-            </TextBox.SelectionBrush>
-            <TextBox.BorderBrush>
-                <ImageBrush/>
-            </TextBox.BorderBrush>
-        </TextBox>
+            </Label.Effect>
+        </Label>
 
     </Grid>
 </Window>

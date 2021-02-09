@@ -5,17 +5,21 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProjectRC"
         mc:Ignorable="d"
-        Title="Dostawcy" ResizeMode="NoResize" Height="450" Width="800" Loaded="Window_Loaded">
+        WindowStartupLocation="CenterScreen"
+        Title="Dostawcy"  ResizeMode="NoResize" Height="450" Width="800" Loaded="Window_Loaded">
     <Window.Resources>
         <CollectionViewSource x:Key="dostawaViewSource" d:DesignSource="{d:DesignInstance {x:Type local:dostawa}, CreateList=True}"/>
     </Window.Resources>
+    <Window.Background>
+        <ImageBrush ImageSource="Wed-SavoyaAct-3.jpg"/>
+    </Window.Background>
     <Grid DataContext="{StaticResource dostawaViewSource}">
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Grid x:Name="grid1" HorizontalAlignment="Left" Margin="53,31,0,0" Grid.Row="2" VerticalAlignment="Top">
+        <Grid x:Name="grid1" HorizontalAlignment="Left" Margin="50,35,0,0" Grid.Row="2" VerticalAlignment="Top" Background="#FF848585" Opacity="0.9">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="Auto"/>
@@ -32,11 +36,11 @@
             <Label Content="nazwa:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="2" VerticalAlignment="Center"/>
             <TextBox x:Name="nazwaTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3" Grid.Row="2" Text="{Binding nazwa, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
         </Grid>
-        <DataGrid x:Name="dostawaDataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding}" Margin="384,13,10,8" Grid.Row="2" RowDetailsVisibilityMode="VisibleWhenSelected">
+        <DataGrid x:Name="dostawaDataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding}" Margin="370,30,30,70" Grid.Row="2" RowDetailsVisibilityMode="VisibleWhenSelected" SelectionChanged="dostawaDataGrid_SelectionChanged" Background="#FF848585" BorderBrush="#FF454546" Opacity="0.9">
             <DataGrid.Columns>
-                <DataGridTextColumn x:Name="cenaColumn" Binding="{Binding cena}" Header="cena" Width="SizeToHeader"/>
-                <DataGridTextColumn x:Name="id_dostawaColumn" Binding="{Binding id_dostawa}" Header="id dostawa" Width="SizeToHeader"/>
-                <DataGridTextColumn x:Name="nazwaColumn" Binding="{Binding nazwa}" Header="nazwa" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="id_dostawaColumn" Binding="{Binding id_dostawa}" Header="id dostawa" Width="100"/>
+                <DataGridTextColumn x:Name="cenaColumn" Binding="{Binding cena}" Header="cena" Width="120"/>
+                <DataGridTextColumn x:Name="nazwaColumn" Binding="{Binding nazwa}" Header="nazwa" Width="160"/>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>

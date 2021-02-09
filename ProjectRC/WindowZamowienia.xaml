@@ -5,32 +5,38 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProjectRC"
         mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
         Title="Zamowienia" ResizeMode="NoResize" Height="450" Width="800" Loaded="Window_Loaded">
     <Window.Resources>
         <CollectionViewSource x:Key="zamowieniaViewSource" d:DesignSource="{d:DesignInstance {x:Type local:zamowienia}, CreateList=True}"/>
     </Window.Resources>
     <Grid DataContext="{StaticResource zamowieniaViewSource}">
+        <Grid.Background>
+            <ImageBrush ImageSource="Wed-SavoyaAct-3.jpg"/>
+        </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <DataGrid x:Name="zamowieniaDataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding}" Margin="351,74,43,147" Grid.RowSpan="3" RowDetailsVisibilityMode="VisibleWhenSelected">
+        <DataGrid x:Name="zamowieniaDataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding}" Margin="366,30,30,70" Grid.RowSpan="3" RowDetailsVisibilityMode="VisibleWhenSelected" SelectionChanged="zamowieniaDataGrid_SelectionChanged" Background="#FF848585" BorderBrush="#FF454546" Opacity="0.9">
             <DataGrid.Columns>
-                <DataGridTemplateColumn x:Name="data_zakupuColumn" Header="data zakupu" Width="SizeToHeader">
+
+                <DataGridTextColumn x:Name="id_zamowieniaColumn" Binding="{Binding id_zamowienia}" Header="id zamowienia" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="id_klientaColumn" Binding="{Binding id_klienta}" Header="id klienta" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="id_produktuColumn" Binding="{Binding id_produktu}" Header="id produktu" Width="SizeToHeader"/>
+
+                <DataGridTextColumn x:Name="rabatColumn" Binding="{Binding rabat}" Header="rabat" Width="50"/>
+                <DataGridTemplateColumn x:Name="data_zakupuColumn" Header="data zakupu" Width="100">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <DatePicker SelectedDate="{Binding data_zakupu, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTextColumn x:Name="id_klientaColumn" Binding="{Binding id_klienta}" Header="id klienta" Width="SizeToHeader"/>
-                <DataGridTextColumn x:Name="id_produktuColumn" Binding="{Binding id_produktu}" Header="id produktu" Width="SizeToHeader"/>
-                <DataGridTextColumn x:Name="id_zamowieniaColumn" Binding="{Binding id_zamowienia}" Header="id zamowienia" Width="SizeToHeader"/>
-                <DataGridTextColumn x:Name="rabatColumn" Binding="{Binding rabat}" Header="rabat" Width="SizeToHeader"/>
             </DataGrid.Columns>
         </DataGrid>
-        <Grid x:Name="grid1" HorizontalAlignment="Left" Margin="71,36,0,0" Grid.Row="2" VerticalAlignment="Top">
+        <Grid x:Name="grid1" HorizontalAlignment="Left" Margin="50,35,0,0" Grid.Row="2" VerticalAlignment="Top" Background="#FF848585" Opacity="0.9">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="Auto"/>
@@ -43,7 +49,7 @@
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <Label Content="data zakupu:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="0" VerticalAlignment="Center"/>
-            <DatePicker x:Name="data_zakupuDatePicker" Grid.Column="1" HorizontalAlignment="Left" Margin="3" Grid.Row="0" SelectedDate="{Binding data_zakupu, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center"/>
+            <DatePicker x:Name="data_zakupuDatePicker" Grid.Column="1" Margin="3,4,21,4" Grid.Row="0" SelectedDate="{Binding data_zakupu, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center"/>
             <Label Content="id klienta:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="1" VerticalAlignment="Center"/>
             <TextBox x:Name="id_klientaTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3" Grid.Row="1" Text="{Binding id_klienta, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
             <Label Content="id produktu:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="2" VerticalAlignment="Center"/>

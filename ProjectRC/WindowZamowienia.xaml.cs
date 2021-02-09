@@ -45,5 +45,10 @@ namespace ProjectRC
             // to use the DbSet<T> as a binding source.   
             custViewSource.Source = contextZamowienia.zamowienia.Local;
         }
+
+        private void zamowieniaDataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }

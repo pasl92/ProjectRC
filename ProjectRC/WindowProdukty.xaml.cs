@@ -46,5 +46,10 @@ namespace ProjectRC
             custViewSource.Source = contextProdukty.produkty.Local;
 
         }
+
+        private void produktyDataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }
