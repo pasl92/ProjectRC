@@ -25,14 +25,29 @@ namespace ProjectRC
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
+            WindowKlienci winKlienci = new WindowKlienci();
+            winKlienci.Show();
+        }
 
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            WindowProdukty winProdukty = new WindowProdukty();
+            winProdukty.Show();
+        }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            WindowDostawca winDostawa = new WindowDostawca();
+            winDostawa.Show();
+        }
+
+        private void Button_Click_4(object sender, RoutedEventArgs e)
+        {
+            WindowZamowienia winZamowienia = new WindowZamowienia();
+            winZamowienia.Show();
         }
     }
 }

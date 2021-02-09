@@ -21,3 +21,11 @@ C:\Users\PC\source\repos\ProjectRC\ProjectRC\bin\Debug\EntityFramework.SqlServer
 C:\Users\PC\source\repos\ProjectRC\ProjectRC\bin\Debug\EntityFramework.xml
 C:\Users\PC\source\repos\ProjectRC\ProjectRC\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\PC\source\repos\ProjectRC\ProjectRC\obj\Debug\ProjectRC.csproj.CopyComplete
+C:\Users\PC\source\repos\ProjectRC\ProjectRC\obj\Debug\WindowDostawca.g.cs
+C:\Users\PC\source\repos\ProjectRC\ProjectRC\obj\Debug\WindowKlienci.g.cs
+C:\Users\PC\source\repos\ProjectRC\ProjectRC\obj\Debug\WindowProdukty.g.cs
+C:\Users\PC\source\repos\ProjectRC\ProjectRC\obj\Debug\WindowZamowienia.g.cs
+C:\Users\PC\source\repos\ProjectRC\ProjectRC\obj\Debug\WindowDostawca.baml
+C:\Users\PC\source\repos\ProjectRC\ProjectRC\obj\Debug\WindowKlienci.baml
+C:\Users\PC\source\repos\ProjectRC\ProjectRC\obj\Debug\WindowProdukty.baml
+C:\Users\PC\source\repos\ProjectRC\ProjectRC\obj\Debug\WindowZamowienia.baml

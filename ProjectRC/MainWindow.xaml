@@ -8,9 +8,9 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <Button Content="Klienci" HorizontalAlignment="Left" Margin="143,112,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
-        <Button Content="Produkty" HorizontalAlignment="Left" Margin="439,117,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button Content="Dostawa" HorizontalAlignment="Left" Margin="143,252,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
-        <Button Content="Zamóweinia" HorizontalAlignment="Left" Margin="439,252,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button Content="Produkty" HorizontalAlignment="Left" Margin="439,117,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_2"/>
+        <Button Content="Dostawa" HorizontalAlignment="Left" Margin="143,244,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_3"/>
+        <Button Content="Zamowienia" HorizontalAlignment="Left" Margin="439,249,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_4"/>
 
     </Grid>
 </Window>
