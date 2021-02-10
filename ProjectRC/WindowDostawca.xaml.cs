@@ -36,21 +36,8 @@ namespace ProjectRC
         {
 
 
-            //System.Windows.Data.CollectionViewSource dostawaViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("dostawaViewSource")));
-            //// Load data by setting the CollectionViewSource.Source property:
-            //// dostawaViewSource.Source = [generic data source]
-            ///
-
-            // Load is an extension method on IQueryable,    
-            // defined in the System.Data.Entity namespace.   
-            // This method enumerates the results of the query,    
-            // similar to ToList but without creating a list.   
-            // When used with Linq to Entities, this method    
-            // creates entity objects and adds them to the context.   
             contextDostawca.dostawa.Load();
 
-            // After the data is loaded, call the DbSet<T>.Local property    
-            // to use the DbSet<T> as a binding source.   
             custViewSource.Source = contextDostawca.dostawa.Local;
         }
 
@@ -59,13 +46,14 @@ namespace ProjectRC
 
         }
 
+
         private void Button_Click(object sender, RoutedEventArgs e)
         {
 
 
             dostawa newDostawca = new dostawa()
             {
-                id_dostawa = 0, 
+                
                 cena = int.Parse(cenaTextBox.Text),
                 nazwa = nazwaTextBox.Text
 
@@ -78,10 +66,17 @@ namespace ProjectRC
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            InitializeComponent();
-            custViewSource = ((CollectionViewSource)(FindResource("dostawaViewSource")));
-            ordViewSource = ((CollectionViewSource)(FindResource("dostawaViewSource")));
-            DataContext = this;
+
+        }
+
+        private void dostawaDataGrid1_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

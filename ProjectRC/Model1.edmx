@@ -9,7 +9,7 @@
           <Key>
             <PropertyRef Name="id_dostawa" />
           </Key>
-          <Property Name="id_dostawa" Type="int" Nullable="false" />
+          <Property Name="id_dostawa" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="nazwa" Type="varchar" MaxLength="40" />
           <Property Name="cena" Type="money" />
         </EntityType>
@@ -17,7 +17,7 @@
           <Key>
             <PropertyRef Name="id_klienci" />
           </Key>
-          <Property Name="id_klienci" Type="int" Nullable="false" />
+          <Property Name="id_klienci" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="imie" Type="varchar" MaxLength="30" />
           <Property Name="nazwisko" Type="varchar" MaxLength="30" />
           <Property Name="nr_tel" Type="int" />
@@ -26,7 +26,7 @@
           <Key>
             <PropertyRef Name="id_produktu" />
           </Key>
-          <Property Name="id_produktu" Type="int" Nullable="false" />
+          <Property Name="id_produktu" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="cena" Type="money" />
           <Property Name="koszt_zakup" Type="money" />
           <Property Name="nazwa" Type="varchar" MaxLength="40" />
@@ -35,7 +35,7 @@
           <Key>
             <PropertyRef Name="id_zamowienia" />
           </Key>
-          <Property Name="id_zamowienia" Type="int" Nullable="false" />
+          <Property Name="id_zamowienia" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="id_produktu" Type="int" />
           <Property Name="id_klienta" Type="int" />
           <Property Name="rabat" Type="decimal" Precision="2" Scale="2" />
@@ -88,7 +88,7 @@
           <Key>
             <PropertyRef Name="id_dostawa" />
           </Key>
-          <Property Name="id_dostawa" Type="Int32" Nullable="false" />
+          <Property Name="id_dostawa" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="nazwa" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
           <Property Name="cena" Type="Decimal" Precision="19" Scale="4" />
         </EntityType>
@@ -96,7 +96,7 @@
           <Key>
             <PropertyRef Name="id_klienci" />
           </Key>
-          <Property Name="id_klienci" Type="Int32" Nullable="false" />
+          <Property Name="id_klienci" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="imie" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Name="nazwisko" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Name="nr_tel" Type="Int32" />
@@ -106,7 +106,7 @@
           <Key>
             <PropertyRef Name="id_produktu" />
           </Key>
-          <Property Name="id_produktu" Type="Int32" Nullable="false" />
+          <Property Name="id_produktu" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="cena" Type="Decimal" Precision="19" Scale="4" />
           <Property Name="koszt_zakup" Type="Decimal" Precision="19" Scale="4" />
           <Property Name="nazwa" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
@@ -116,7 +116,7 @@
           <Key>
             <PropertyRef Name="id_zamowienia" />
           </Key>
-          <Property Name="id_zamowienia" Type="Int32" Nullable="false" />
+          <Property Name="id_zamowienia" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="id_produktu" Type="Int32" />
           <Property Name="id_klienta" Type="Int32" />
           <Property Name="rabat" Type="Decimal" Precision="2" Scale="2" />

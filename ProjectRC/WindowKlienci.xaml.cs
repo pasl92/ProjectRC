@@ -53,7 +53,17 @@ namespace ProjectRC
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            klienci newKlient = new klienci()
+            {
 
+                imie = imieTextBox.Text,
+                nazwisko = nazwiskoTextBox.Text,
+                nr_tel = int.Parse(nr_telTextBox.Text)
+
+            };
+
+            contextKlienci.klienci.Add(newKlient);
+            contextKlienci.SaveChanges();
         }
     }
 }

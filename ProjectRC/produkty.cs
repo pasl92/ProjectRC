@@ -10,14 +10,14 @@
 namespace ProjectRC
 {
     using System;
-    using System.Collections.Generic;
+    using System.Collections.ObjectModel;
     
     public partial class produkty
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public produkty()
         {
-            this.zamowienia = new HashSet<zamowienia>();
+            this.zamowienia = new ObservableCollection<zamowienia>();
         }
     
         public int id_produktu { get; set; }
@@ -26,6 +26,6 @@ namespace ProjectRC
         public string nazwa { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<zamowienia> zamowienia { get; set; }
+        public virtual ObservableCollection<zamowienia> zamowienia { get; set; }
     }
 }

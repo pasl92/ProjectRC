@@ -8,6 +8,7 @@
         WindowStartupLocation="CenterScreen"
         Title="Dostawcy"  ResizeMode="NoResize" Height="450" Width="800" Loaded="Window_Loaded">
     <Window.Resources>
+        
         <CollectionViewSource x:Key="dostawaViewSource" d:DesignSource="{d:DesignInstance {x:Type local:dostawa}, CreateList=True}"/>
     </Window.Resources>
     <Window.Background>
@@ -41,9 +42,9 @@
                 <DataGridTextColumn x:Name="nazwaColumn" Binding="{Binding nazwa}" Header="nazwa" Width="160"/>
             </DataGrid.Columns>
         </DataGrid>
-        <Button Content="Create" HorizontalAlignment="Left" Margin="60,199,0,0" Grid.Row="2" VerticalAlignment="Top" Height="40" Width="80" Click="Button_Click"/>
+        <Button x:Name="Create_Button" Content="Create" HorizontalAlignment="Left" Margin="60,199,0,0" Grid.Row="2" VerticalAlignment="Top" Height="40" Width="80" Click="Button_Click"/>
         <Button Content="Read" HorizontalAlignment="Left" Margin="162,199,0,0" Grid.Row="2" VerticalAlignment="Top" Height="40" Width="80" RenderTransformOrigin="0.175,0.475"/>
         <Button Content="Update" HorizontalAlignment="Left" Margin="60,264,0,0" Grid.Row="2" VerticalAlignment="Top" Height="40" Width="80" Click="Button_Click_1"/>
-        <Button Content="Delete" HorizontalAlignment="Left" Margin="162,264,0,0" Grid.Row="2" VerticalAlignment="Top" Height="40" Width="80"/>
+        <Button Content="Delete" HorizontalAlignment="Left" Margin="162,264,0,0" Grid.Row="2" VerticalAlignment="Top" Height="40" Width="80" Click="Button_Click_2"/>
     </Grid>
 </Window>
