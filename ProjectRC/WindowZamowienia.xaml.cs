@@ -50,5 +50,21 @@ namespace ProjectRC
         {
 
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+                zamowienia newZamowienia = new zamowienia()
+                {
+                    id_klienta = int.Parse(id_klientaTextBox.Text),
+                    id_produktu = int.Parse(id_produktuTextBox.Text),
+                    rabat = 0,
+                    data_zakupu = data_zakupuDatePicker.SelectedDate
+                };
+
+                contextZamowienia.zamowienia.Add(newZamowienia);
+                contextZamowienia.SaveChanges();
+
+        }
     }
 }

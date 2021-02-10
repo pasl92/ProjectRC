@@ -36,6 +36,10 @@
                 </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
+        <Button Content="Create" HorizontalAlignment="Left" Margin="68,232,0,0" Grid.Row="2" VerticalAlignment="Top" Height="40" Width="80" Click="Button_Click"/>
+        <Button Content="Read" HorizontalAlignment="Left" Margin="170,232,0,0" Grid.Row="2" VerticalAlignment="Top" Height="40" Width="80" RenderTransformOrigin="0.175,0.475"/>
+        <Button Content="Update" HorizontalAlignment="Left" Margin="68,297,0,0" Grid.Row="2" VerticalAlignment="Top" Height="40" Width="80"/>
+        <Button Content="Delete" HorizontalAlignment="Left" Margin="170,297,0,0" Grid.Row="2" VerticalAlignment="Top" Height="40" Width="80"/>
         <Grid x:Name="grid1" HorizontalAlignment="Left" Margin="50,35,0,0" Grid.Row="2" VerticalAlignment="Top" Background="#FF848585" Opacity="0.9">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto"/>
@@ -49,19 +53,13 @@
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <Label Content="data zakupu:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="0" VerticalAlignment="Center"/>
-            <DatePicker x:Name="data_zakupuDatePicker" Grid.Column="1" Margin="3,4,21,4" Grid.Row="0" SelectedDate="{Binding data_zakupu, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center"/>
+            <DatePicker x:Name="data_zakupuDatePicker" Grid.Column="1" HorizontalAlignment="Left" Margin="3" Grid.Row="0" SelectedDate="{Binding data_zakupu, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center"/>
             <Label Content="id klienta:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="1" VerticalAlignment="Center"/>
             <TextBox x:Name="id_klientaTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3" Grid.Row="1" Text="{Binding id_klienta, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
             <Label Content="id produktu:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="2" VerticalAlignment="Center"/>
             <TextBox x:Name="id_produktuTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3" Grid.Row="2" Text="{Binding id_produktu, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
-            <Label Content="id zamowienia:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="3" VerticalAlignment="Center"/>
-            <TextBox x:Name="id_zamowieniaTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3" Grid.Row="3" Text="{Binding id_zamowienia, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
             <Label Content="rabat:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="4" VerticalAlignment="Center"/>
             <TextBox x:Name="rabatTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3" Grid.Row="4" Text="{Binding rabat, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
         </Grid>
-        <Button Content="Create" HorizontalAlignment="Left" Margin="68,232,0,0" Grid.Row="2" VerticalAlignment="Top" Height="40" Width="80"/>
-        <Button Content="Read" HorizontalAlignment="Left" Margin="170,232,0,0" Grid.Row="2" VerticalAlignment="Top" Height="40" Width="80" RenderTransformOrigin="0.175,0.475"/>
-        <Button Content="Update" HorizontalAlignment="Left" Margin="68,297,0,0" Grid.Row="2" VerticalAlignment="Top" Height="40" Width="80"/>
-        <Button Content="Delete" HorizontalAlignment="Left" Margin="170,297,0,0" Grid.Row="2" VerticalAlignment="Top" Height="40" Width="80"/>
     </Grid>
 </Window>
