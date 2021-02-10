@@ -51,5 +51,20 @@ namespace ProjectRC
         {
 
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            produkty newProdukt = new produkty()
+            {
+
+                nazwa = nazwaTextBox.Text,
+                koszt_zakup = int.Parse(koszt_zakupTextBox.Text),
+                cena = int.Parse(cenaTextBox.Text)
+
+            };
+
+            contextProdukty.produkty.Add(newProdukt);
+            contextProdukty.SaveChanges();
+        }
     }
 }
