@@ -58,5 +58,30 @@ namespace ProjectRC
         {
 
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+
+            dostawa newDostawca = new dostawa()
+            {
+                id_dostawa = 0, 
+                cena = int.Parse(cenaTextBox.Text),
+                nazwa = nazwaTextBox.Text
+
+            };
+
+            contextDostawca.dostawa.Add(newDostawca);
+            contextDostawca.SaveChanges();
+
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            InitializeComponent();
+            custViewSource = ((CollectionViewSource)(FindResource("dostawaViewSource")));
+            ordViewSource = ((CollectionViewSource)(FindResource("dostawaViewSource")));
+            DataContext = this;
+        }
     }
 }

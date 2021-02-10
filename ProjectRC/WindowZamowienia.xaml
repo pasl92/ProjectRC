@@ -59,5 +59,9 @@
             <Label Content="rabat:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="4" VerticalAlignment="Center"/>
             <TextBox x:Name="rabatTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3" Grid.Row="4" Text="{Binding rabat, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
         </Grid>
+        <Button Content="Create" HorizontalAlignment="Left" Margin="68,232,0,0" Grid.Row="2" VerticalAlignment="Top" Height="40" Width="80"/>
+        <Button Content="Read" HorizontalAlignment="Left" Margin="170,232,0,0" Grid.Row="2" VerticalAlignment="Top" Height="40" Width="80" RenderTransformOrigin="0.175,0.475"/>
+        <Button Content="Update" HorizontalAlignment="Left" Margin="68,297,0,0" Grid.Row="2" VerticalAlignment="Top" Height="40" Width="80"/>
+        <Button Content="Delete" HorizontalAlignment="Left" Margin="170,297,0,0" Grid.Row="2" VerticalAlignment="Top" Height="40" Width="80"/>
     </Grid>
 </Window>
