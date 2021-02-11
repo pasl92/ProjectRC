@@ -50,17 +50,17 @@ namespace ProjectRC
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            
-            decimal x = (decimal)System.Data.SqlTypes.SqlDecimal.Parse(rabatTextBox.Text);
-
-            if(x >= 1)
-            {
-                MessageBox.Show("Wprowadz wartość od 0.00 do 0.99", "Uwaga", MessageBoxButton.OK, MessageBoxImage.Warning);
-                return;
-            }
 
             try
             {
+                decimal x = (decimal)System.Data.SqlTypes.SqlDecimal.Parse(rabatTextBox.Text);
+
+                if (x >= 1)
+                {
+                    MessageBox.Show("Wprowadz wartość rabatu od 0.00 do 0.99", "Uwaga", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    return;
+                }
+
                 zamowienia newZamowienia = new zamowienia()
                 {
                     id_klienta = int.Parse(id_klientaTextBox.Text),
