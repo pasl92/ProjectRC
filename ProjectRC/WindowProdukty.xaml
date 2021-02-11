@@ -52,7 +52,7 @@
             <TextBox x:Name="nazwaTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="24" Margin="10,4,0,4" Grid.Row="3" Text="{Binding nazwa, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
         </Grid>
         <Button Content="Create" HorizontalAlignment="Left" Margin="50,181,0,0" Grid.Row="2" VerticalAlignment="Top" Height="40" Width="230" Click="Button_Click"  FontSize="14" Opacity="0.9"/>
-        <Button Content="Update" HorizontalAlignment="Left" Margin="50,239,0,0" Grid.Row="2" VerticalAlignment="Top" Height="40" Width="230"  FontSize="14" Opacity="0.9"/>
+        <Button Content="Update" HorizontalAlignment="Left" Margin="50,239,0,0" Grid.Row="2" VerticalAlignment="Top" Height="40" Width="230"  FontSize="14" Opacity="0.9" Click="Button_Click_2"/>
         <Button Content="Delete" HorizontalAlignment="Left" Margin="50,299,0,0" Grid.Row="2" VerticalAlignment="Top" Height="40" Width="230" Click="Button_Click_1"  FontSize="14" Opacity="0.9"/>
     </Grid>
 </Window>

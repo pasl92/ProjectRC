@@ -35,10 +35,6 @@ namespace ProjectRC
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
 
-
-            contextDostawca.dostawa.Load();
-
-            custViewSource.Source = contextDostawca.dostawa.Local;
         }
 
         private void dostawaDataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -66,13 +62,11 @@ namespace ProjectRC
             {
                 MessageBox.Show("Wprowadzono niepoprawne dane", "Uwaga", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
-
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             contextDostawca.dostawa.Load();
-
             custViewSource.Source = contextDostawca.dostawa.Local;
         }
 
@@ -100,10 +94,10 @@ namespace ProjectRC
             {
                 MessageBox.Show("Zaznacz element do usunięcia", "Uwaga", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
+
         }
 
-
-            private void cenaTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        private void cenaTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
 
         }

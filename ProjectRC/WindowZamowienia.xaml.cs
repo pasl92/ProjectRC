@@ -35,9 +35,6 @@ namespace ProjectRC
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
 
-            //contextZamowienia.zamowienia.Load();
-
-            //custViewSource.Source = contextZamowienia.zamowienia.Local;
         }
 
         private void zamowieniaDataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -62,7 +59,7 @@ namespace ProjectRC
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Wprowadzono niepoprawne dane", "Exception Sample", MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show("Wprowadzono niepoprawne dane", "Uwaga", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }
 
@@ -85,14 +82,13 @@ namespace ProjectRC
 
             catch (Exception ex)
             {
-                MessageBox.Show("Zaznacz element do usunięcia", "Exception Sample", MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show("Zaznacz element do usunięcia", "Uwaga", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
 }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
             contextZamowienia.zamowienia.Load();
-
             custViewSource.Source = contextZamowienia.zamowienia.Local;
         }
 

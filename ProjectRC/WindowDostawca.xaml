@@ -42,8 +42,8 @@
                 <DataGridTextColumn x:Name="nazwaColumn" Binding="{Binding nazwa}" Header="nazwa" Width="160"/>
             </DataGrid.Columns>
         </DataGrid>
-        <Button x:Name="Create_Button" Content="Create" HorizontalAlignment="Left" Margin="50,185,0,0" Grid.Row="2" VerticalAlignment="Top" Height="40" Width="192" Click="Button_Click"  FontSize="14" Opacity="0.9"/>
-        <Button Content="Update" HorizontalAlignment="Left" Margin="50,243,0,0" Grid.Row="2" VerticalAlignment="Top" Height="40" Width="192" Click="Button_Click_1"  FontSize="14" Opacity="0.9"/>
-        <Button Content="Delete" HorizontalAlignment="Left" Margin="50,301,0,0" Grid.Row="2" VerticalAlignment="Top" Height="40" Width="192" Click="Button_Click_2" RenderTransformOrigin="-0.4,0.55"  FontSize="14" Opacity="0.9"/>
+        <Button x:Name="Create_Button" Content="Create" HorizontalAlignment="Left" Margin="50,185,0,0" Grid.Row="2" VerticalAlignment="Top" Height="40" Width="192" Click="Button_Click" FontWeight="Bold" FontSize="14" Opacity="0.9"/>
+        <Button Content="Update" HorizontalAlignment="Left" Margin="50,243,0,0" Grid.Row="2" VerticalAlignment="Top" Height="40" Width="192" Click="Button_Click_1" FontWeight="Bold" FontSize="14" Opacity="0.9"/>
+        <Button Content="Delete" HorizontalAlignment="Left" Margin="50,301,0,0" Grid.Row="2" VerticalAlignment="Top" Height="40" Width="192" Click="Button_Click_2" RenderTransformOrigin="-0.4,0.55" FontWeight="Bold" FontSize="14" Opacity="0.9"/>
     </Grid>
 </Window>

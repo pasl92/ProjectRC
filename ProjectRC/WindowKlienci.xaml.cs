@@ -17,13 +17,17 @@ using System.Data.Entity;
 namespace ProjectRC
 {
     /// <summary>
-    /// Interaction logic for WindowKlienci.xaml
+    /// Logika okna Klienci 
     /// </summary>
     public partial class WindowKlienci : Window
     {
         RcDBEntities contextKlienci = new RcDBEntities();
         CollectionViewSource custViewSource;
         CollectionViewSource ordViewSource;
+
+        /// <summary>
+        /// Konstruktor okna klienci
+        /// </summary>
         public WindowKlienci()
         {
             InitializeComponent();
@@ -35,15 +39,6 @@ namespace ProjectRC
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
 
-            //System.Windows.Data.CollectionViewSource klienciViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("klienciViewSource")));
-            //// Load data by setting the CollectionViewSource.Source property:
-            //// klienciViewSource.Source = [generic data source]
-            ///
-            contextKlienci.klienci.Load();
-
-            // After the data is loaded, call the DbSet<T>.Local property    
-            // to use the DbSet<T> as a binding source.   
-            custViewSource.Source = contextKlienci.klienci.Local;
         }
 
         private void klienciDataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -92,6 +87,12 @@ namespace ProjectRC
             {
                 MessageBox.Show("Zaznacz element do usunięcia", "Uwaga", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            contextKlienci.klienci.Load();
+            custViewSource.Source = contextKlienci.klienci.Local;
         }
     }
 }

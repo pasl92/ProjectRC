@@ -35,15 +35,7 @@ namespace ProjectRC
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-
-            //System.Windows.Data.CollectionViewSource produktyViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("produktyViewSource")));
-            //// Load data by setting the CollectionViewSource.Source property:
-            //// produktyViewSource.Source = [generic data source]
-            contextProdukty.produkty.Load();
-
-            // After the data is loaded, call the DbSet<T>.Local property    
-            // to use the DbSet<T> as a binding source.   
-            custViewSource.Source = contextProdukty.produkty.Local;
+            
 
         }
 
@@ -91,10 +83,16 @@ namespace ProjectRC
                 contextProdukty.SaveChanges();
                 custViewSource.View.Refresh();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 MessageBox.Show("Zaznacz element do usunięcia", "Uwaga", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            contextProdukty.produkty.Load();
+            custViewSource.Source = contextProdukty.produkty.Local;
         }
     }
 }
