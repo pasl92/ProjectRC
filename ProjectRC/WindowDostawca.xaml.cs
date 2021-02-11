@@ -66,7 +66,9 @@ namespace ProjectRC
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
+            contextDostawca.dostawa.Load();
 
+            custViewSource.Source = contextDostawca.dostawa.Local;
         }
 
         private void dostawaDataGrid1_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -75,6 +77,20 @@ namespace ProjectRC
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            var cur = custViewSource.View.CurrentItem as dostawa;
+
+            var cust = (from c in contextDostawca.dostawa
+                        where c.id_dostawa == cur.id_dostawa
+                        select c).FirstOrDefault();
+
+                contextDostawca.dostawa.Remove(cust);
+            
+            contextDostawca.SaveChanges();
+            custViewSource.View.Refresh();
+        }
+
+        private void cenaTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
 
         }

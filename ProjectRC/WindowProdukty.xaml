@@ -54,6 +54,6 @@
         <Button Content="Create" HorizontalAlignment="Left" Margin="60,199,0,0" Grid.Row="2" VerticalAlignment="Top" Height="40" Width="80" Click="Button_Click"/>
         <Button Content="Read" HorizontalAlignment="Left" Margin="162,199,0,0" Grid.Row="2" VerticalAlignment="Top" Height="40" Width="80" RenderTransformOrigin="0.175,0.475"/>
         <Button Content="Update" HorizontalAlignment="Left" Margin="60,264,0,0" Grid.Row="2" VerticalAlignment="Top" Height="40" Width="80"/>
-        <Button Content="Delete" HorizontalAlignment="Left" Margin="162,264,0,0" Grid.Row="2" VerticalAlignment="Top" Height="40" Width="80"/>
+        <Button Content="Delete" HorizontalAlignment="Left" Margin="162,264,0,0" Grid.Row="2" VerticalAlignment="Top" Height="40" Width="80" Click="Button_Click_1"/>
     </Grid>
 </Window>

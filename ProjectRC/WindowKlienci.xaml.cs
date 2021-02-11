@@ -65,5 +65,19 @@ namespace ProjectRC
             contextKlienci.klienci.Add(newKlient);
             contextKlienci.SaveChanges();
         }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            var cur = custViewSource.View.CurrentItem as klienci;
+
+            var cust = (from c in contextKlienci.klienci
+                        where c.id_klienci == cur.id_klienci
+                        select c).FirstOrDefault();
+
+            contextKlienci.klienci.Remove(cust);
+
+            contextKlienci.SaveChanges();
+            custViewSource.View.Refresh();
+        }
     }
 }

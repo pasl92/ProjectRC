@@ -36,10 +36,9 @@
                 </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
-        <Button Content="Create" HorizontalAlignment="Left" Margin="68,232,0,0" Grid.Row="2" VerticalAlignment="Top" Height="40" Width="80" Click="Button_Click"/>
-        <Button Content="Read" HorizontalAlignment="Left" Margin="170,232,0,0" Grid.Row="2" VerticalAlignment="Top" Height="40" Width="80" RenderTransformOrigin="0.175,0.475"/>
-        <Button Content="Update" HorizontalAlignment="Left" Margin="68,297,0,0" Grid.Row="2" VerticalAlignment="Top" Height="40" Width="80"/>
-        <Button Content="Delete" HorizontalAlignment="Left" Margin="170,297,0,0" Grid.Row="2" VerticalAlignment="Top" Height="40" Width="80"/>
+        <Button Content="Create" HorizontalAlignment="Left" Margin="50,195,0,0" Grid.Row="2" VerticalAlignment="Top" Height="40" Width="209" Click="Button_Click" FontWeight="Bold" FontSize="14" Opacity="0.9"/>
+        <Button Content="Update" HorizontalAlignment="Left" Margin="50,252,0,0" Grid.Row="2" VerticalAlignment="Top" Height="40" Width="209" Click="Button_Click_2" FontWeight="Bold" FontSize="14" Opacity="0.9"/>
+        <Button Content="Delete" HorizontalAlignment="Left" Margin="50,311,0,0" Grid.Row="2" VerticalAlignment="Top" Height="40" Width="209" Click="Button_Click_1" FontWeight="Bold" FontSize="14" Opacity="0.9"/>
         <Grid x:Name="grid1" HorizontalAlignment="Left" Margin="50,35,0,0" Grid.Row="2" VerticalAlignment="Top" Background="#FF848585" Opacity="0.9">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto"/>

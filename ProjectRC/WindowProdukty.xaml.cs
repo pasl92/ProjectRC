@@ -66,5 +66,19 @@ namespace ProjectRC
             contextProdukty.produkty.Add(newProdukt);
             contextProdukty.SaveChanges();
         }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            var cur = custViewSource.View.CurrentItem as produkty;
+
+            var cust = (from c in contextProdukty.produkty
+                        where c.id_produktu == cur.id_produktu
+                        select c).FirstOrDefault();
+
+            contextProdukty.produkty.Remove(cust);
+
+            contextProdukty.SaveChanges();
+            custViewSource.View.Refresh();
+        }
     }
 }

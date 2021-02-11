@@ -53,7 +53,8 @@ namespace ProjectRC
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
+            try
+            {
                 zamowienia newZamowienia = new zamowienia()
                 {
                     id_klienta = int.Parse(id_klientaTextBox.Text),
@@ -64,6 +65,44 @@ namespace ProjectRC
 
                 contextZamowienia.zamowienia.Add(newZamowienia);
                 contextZamowienia.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Wprowadzono niepoprawne dane", "Exception Sample", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+
+                var cur = custViewSource.View.CurrentItem as zamowienia;
+
+                var cust = (from c in contextZamowienia.zamowienia
+                            where c.id_zamowienia == cur.id_zamowienia
+                            select c).FirstOrDefault();
+
+                contextZamowienia.zamowienia.Remove(cust);
+
+                contextZamowienia.SaveChanges();
+                custViewSource.View.Refresh();
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Zaznacz element do usunięcia", "Exception Sample", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
+}
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            contextZamowienia.SaveChanges();
+            custViewSource.View.Refresh();
+        }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
 
         }
     }
