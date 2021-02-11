@@ -38,7 +38,8 @@ namespace ProjectRC
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-
+            contextKlienci.klienci.Load();
+            custViewSource.Source = contextKlienci.klienci.Local;
         }
 
         private void klienciDataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)

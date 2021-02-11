@@ -11,39 +11,40 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="66*"/>
             <ColumnDefinition Width="73*"/>
-            <ColumnDefinition Width="420*"/>
+            <ColumnDefinition Width="29*"/>
+            <ColumnDefinition Width="391*"/>
             <ColumnDefinition Width="235*"/>
         </Grid.ColumnDefinitions>
 
 
-        <Image Source="Wed-SavoyaAct-3.jpg"  Stretch="Fill" OpacityMask="Black" Grid.ColumnSpan="4"/>
+        <Image Source="Wed-SavoyaAct-3.jpg"  Stretch="Fill" OpacityMask="Black" Grid.ColumnSpan="5"/>
 
-        <Button Content="Klienci" BorderBrush="YellowGreen"  HorizontalAlignment="Left" Margin="110.902,65,0,0" VerticalAlignment="Top" Width="118" Click="Button_Click_1" FontWeight="Bold" Height="50" Foreground="Black" OpacityMask="Black" FontSize="22" UseLayoutRounding="False" Grid.Column="2">
+        <Button Content="Klienci" BorderBrush="YellowGreen"  HorizontalAlignment="Left" Margin="81.69,65,0,0" VerticalAlignment="Top" Width="118" Click="Button_Click_1" FontWeight="Bold" Height="50" Foreground="Black" OpacityMask="Black" FontSize="22" UseLayoutRounding="False" Grid.Column="3">
             <Button.Background>
                 <ImageBrush ImageSource="Wed-SavoyaAct-3.jpg" Stretch="None"/>
             </Button.Background>
         </Button>
-        <Button Content="Produkty" BorderBrush="YellowGreen" HorizontalAlignment="Left" Margin="56,65,0,0" VerticalAlignment="Top" Width="141" Click="Button_Click_2" FontWeight="Bold" Height="50" FontSize="22" ScrollViewer.CanContentScroll="True" Grid.ColumnSpan="3">
+        <Button Content="Produkty" BorderBrush="YellowGreen" HorizontalAlignment="Left" Margin="56,65,0,0" VerticalAlignment="Top" Width="141" Click="Button_Click_2" FontWeight="Bold" Height="50" FontSize="22" ScrollViewer.CanContentScroll="True" Grid.ColumnSpan="4">
             <Button.Background>
                 <ImageBrush Stretch="None" TileMode="FlipXY" ImageSource="Wed-SavoyaAct-3.jpg"/>
             </Button.Background>
         </Button>
-        <Button Content="Dostawa" BorderBrush="YellowGreen" HorizontalAlignment="Left" Margin="110.895,161,0,0" VerticalAlignment="Top" Width="118" Click="Button_Click_3" FontWeight="Bold" Height="66" FontSize="22" Grid.Column="2">
+        <Button Content="Dostawa" BorderBrush="YellowGreen" HorizontalAlignment="Left" Margin="81.788,161,0,0" VerticalAlignment="Top" Width="118" Click="Button_Click_3" FontWeight="Bold" Height="66" FontSize="22" Grid.Column="3">
             <Button.Background>
                 <ImageBrush ImageSource="Wed-SavoyaAct-3.jpg" Stretch="None"/>
             </Button.Background>
         </Button>
-        <Button Content="Zamówienia" BorderBrush="YellowGreen" HorizontalAlignment="Left" Margin="56,161,0,0" VerticalAlignment="Top" Width="141" Click="Button_Click_4" FontWeight="Bold" Height="66" FontSize="22" Grid.ColumnSpan="3">
+        <Button Content="Zamówienia" BorderBrush="YellowGreen" HorizontalAlignment="Left" Margin="56,161,0,0" VerticalAlignment="Top" Width="141" Click="Button_Click_4" FontWeight="Bold" Height="66" FontSize="22" Grid.ColumnSpan="4">
             <Button.Background>
                 <ImageBrush ImageSource="Wed-SavoyaAct-3.jpg" Stretch="None"/>
             </Button.Background>
         </Button>
-        <Label Content="RC SHOP" HorizontalAlignment="Left" Margin="29,289,0,0" VerticalAlignment="Top" Height="102" Width="554" FontSize="72" FontWeight="Bold" Foreground="#FFAECA33" FontFamily="Gill Sans Ultra Bold" Grid.ColumnSpan="3" Grid.Column="1">
+        <Label Content="RC SHOP" HorizontalAlignment="Left" Margin="29,289,0,0" VerticalAlignment="Top" Height="102" Width="554" FontSize="72" FontWeight="Bold" Foreground="#FFAECA33" FontFamily="Gill Sans Ultra Bold" Grid.ColumnSpan="4" Grid.Column="1">
             <Label.Effect>
                 <BlurEffect/>
             </Label.Effect>
         </Label>
-        <Button Content="INFO" HorizontalAlignment="Left" Margin="22,343,0,0" VerticalAlignment="Top" Width="143" Click="Button_Click_5" FontWeight="Bold" FontSize="14" Grid.Column="3">
+        <Button Content="INFO" HorizontalAlignment="Left" Margin="22,343,0,0" VerticalAlignment="Top" Width="143" Click="Button_Click_5" FontWeight="Bold" FontSize="14" Grid.Column="4">
             <Button.Background>
                 <ImageBrush/>
             </Button.Background>

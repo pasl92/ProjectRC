@@ -37,6 +37,8 @@ namespace ProjectRC
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            contextDostawca.dostawa.Load();
+            custViewSource.Source = contextDostawca.dostawa.Local;
 
         }
 
@@ -82,6 +84,7 @@ namespace ProjectRC
         {
             try
             {
+
                 var cur = custViewSource.View.CurrentItem as dostawa;
 
                 var cust = (from c in contextDostawca.dostawa

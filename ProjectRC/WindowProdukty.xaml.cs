@@ -38,8 +38,8 @@ namespace ProjectRC
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            
-
+            //contextProdukty.produkty.Load();
+            //custViewSource.Source = contextProdukty.produkty.Local;
         }
 
         private void produktyDataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -55,8 +55,8 @@ namespace ProjectRC
                 {
 
                     nazwa = nazwaTextBox.Text,
-                    koszt_zakup = int.Parse(koszt_zakupTextBox.Text),
-                    cena = int.Parse(cenaTextBox.Text)
+                    koszt_zakup = (decimal)System.Data.SqlTypes.SqlDecimal.Parse(koszt_zakupTextBox.Text),
+                    cena = 1 /*(decimal)System.Data.SqlTypes.SqlDecimal.Parse(cenaTextBox.Text)*/
 
                 };
 

@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Data.Entity;
 
+
 namespace ProjectRC
 {
     /// <summary>
@@ -38,7 +39,8 @@ namespace ProjectRC
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-
+            contextZamowienia.zamowienia.Load();
+            custViewSource.Source = contextZamowienia.zamowienia.Local;
         }
 
         private void zamowieniaDataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -48,16 +50,24 @@ namespace ProjectRC
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            
+            decimal x = (decimal)System.Data.SqlTypes.SqlDecimal.Parse(rabatTextBox.Text);
+
+            if(x >= 1)
+            {
+                MessageBox.Show("Wprowadz wartość od 0.00 do 0.99", "Uwaga", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
             try
             {
                 zamowienia newZamowienia = new zamowienia()
                 {
                     id_klienta = int.Parse(id_klientaTextBox.Text),
                     id_produktu = int.Parse(id_produktuTextBox.Text),
-                    rabat = 0,
+                    rabat = x,
                     data_zakupu = data_zakupuDatePicker.SelectedDate
                 };
-
                 contextZamowienia.zamowienia.Add(newZamowienia);
                 contextZamowienia.SaveChanges();
             }

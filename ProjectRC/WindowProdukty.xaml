@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:ProjectRC"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
-        Title="Produkty" ResizeMode="NoResize" Height="450" Width="800" Loaded="Window_Loaded">
+        Title="Produkty" ResizeMode="NoResize" Height="450" Width="800" Loaded="Window_Loaded" Icon="logo.ico">
     <Window.Resources>
         <CollectionViewSource x:Key="produktyViewSource" d:DesignSource="{d:DesignInstance {x:Type local:produkty}, CreateList=True}"/>
     </Window.Resources>
@@ -45,7 +45,7 @@
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <Label Content="cena:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="0" VerticalAlignment="Center"/>
-            <TextBox x:Name="cenaTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="24" Margin="10,2,0,6" Grid.Row="0" Text="{Binding cena, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
+            <TextBox x:Name="cenaTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="24" Margin="10,2,0,6" Grid.Row="0" VerticalAlignment="Center" Text="{Binding cena, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Width="120"/>
             <Label Content="koszt zakup:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="2" VerticalAlignment="Center"/>
             <TextBox x:Name="koszt_zakupTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="24" Margin="10,3,0,5" Grid.Row="2" Text="{Binding koszt_zakup, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
             <Label Content="nazwa:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="3" VerticalAlignment="Center"/>

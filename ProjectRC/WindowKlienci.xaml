@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:ProjectRC"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
-        Title="Klienci" ResizeMode="NoResize" Height="450" Width="800" Loaded="Window_Loaded">
+        Title="Klienci" ResizeMode="NoResize" Height="450" Width="800" Loaded="Window_Loaded" Icon="logo.ico">
     <Window.Resources>
         <CollectionViewSource x:Key="klienciViewSource" d:DesignSource="{d:DesignInstance {x:Type local:klienci}, CreateList=True}"/>
     </Window.Resources>
