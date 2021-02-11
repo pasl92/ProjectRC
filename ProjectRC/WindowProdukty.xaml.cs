@@ -66,6 +66,7 @@ namespace ProjectRC
             catch (Exception)
             {
                 MessageBox.Show("Wprowadzono niepoprawne dane", "Uwaga", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
             }
 
 
@@ -89,6 +90,7 @@ namespace ProjectRC
             catch (Exception)
             {
                 MessageBox.Show("Zaznacz element do usunięcia", "Uwaga", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
             }
         }
 

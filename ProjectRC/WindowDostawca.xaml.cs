@@ -55,7 +55,7 @@ namespace ProjectRC
                 dostawa newDostawca = new dostawa()
                 {
 
-                    cena = int.Parse(cenaTextBox.Text),
+                    cena = (decimal)System.Data.SqlTypes.SqlDecimal.Parse(cenaTextBox.Text),
                     nazwa = nazwaTextBox.Text
 
                 };
@@ -63,9 +63,10 @@ namespace ProjectRC
                 contextDostawca.dostawa.Add(newDostawca);
                 contextDostawca.SaveChanges();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 MessageBox.Show("Wprowadzono niepoprawne dane", "Uwaga", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
             }
         }
 
@@ -99,6 +100,7 @@ namespace ProjectRC
             catch (Exception)
             {
                 MessageBox.Show("Zaznacz element do usunięcia", "Uwaga", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
             }
 
         }

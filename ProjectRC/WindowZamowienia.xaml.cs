@@ -50,6 +50,7 @@ namespace ProjectRC
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            zamowienia newZamowienia = new zamowienia();
 
             try
             {
@@ -61,20 +62,49 @@ namespace ProjectRC
                     return;
                 }
 
-                zamowienia newZamowienia = new zamowienia()
+                IQueryable<klienci> recordsKlienci = contextZamowienia.klienci;
+                var countIdKlienta = recordsKlienci.Count();
+
+                newZamowienia.id_klienta = int.Parse(id_klientaTextBox.Text);
+                if (countIdKlienta < newZamowienia.id_klienta)
                 {
-                    id_klienta = int.Parse(id_klientaTextBox.Text),
-                    id_produktu = int.Parse(id_produktuTextBox.Text),
-                    rabat = x,
-                    data_zakupu = data_zakupuDatePicker.SelectedDate
-                };
-                contextZamowienia.zamowienia.Add(newZamowienia);
-                contextZamowienia.SaveChanges();
+                    MessageBox.Show($"Maksymalny indeks klienta wynosi {countIdKlienta}\nSprawdz id klienta w tabeli klienci", "Uwaga", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    return;
+                }
+
+                IQueryable<klienci> recordsProdukty = contextZamowienia.klienci;
+                var countIdProdukty = recordsProdukty.Count();
+
+                newZamowienia.id_produktu = int.Parse(id_produktuTextBox.Text);
+                if (countIdProdukty < newZamowienia.id_produktu)
+                {
+                    MessageBox.Show($"Maksymalny indeks produktu wynosi {countIdProdukty}\nSprawdz id produktu w tabeli produkty", "Uwaga", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    return;
+                }
+
+
+                newZamowienia.rabat = x;
+                newZamowienia.data_zakupu = data_zakupuDatePicker.SelectedDate;
+                
             }
             catch (Exception)
             {
                 MessageBox.Show("Wprowadzono niepoprawne dane", "Uwaga", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
             }
+
+            try
+            {
+                contextZamowienia.zamowienia.Add(newZamowienia);
+                contextZamowienia.SaveChanges();
+                
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Wprowadzono niepoprawidłowe id klienta lub produktu", "Uwaga", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
@@ -97,6 +127,7 @@ namespace ProjectRC
             catch (Exception)
             {
                 MessageBox.Show("Zaznacz element do usunięcia", "Uwaga", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
             }
 }
 
