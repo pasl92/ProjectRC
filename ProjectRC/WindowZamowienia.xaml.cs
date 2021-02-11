@@ -35,15 +35,9 @@ namespace ProjectRC
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
 
-            //System.Windows.Data.CollectionViewSource zamowieniaViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("zamowieniaViewSource")));
-            //// Load data by setting the CollectionViewSource.Source property:
-            //// zamowieniaViewSource.Source = [generic data source]
-            ///
-            contextZamowienia.zamowienia.Load();
+            //contextZamowienia.zamowienia.Load();
 
-            // After the data is loaded, call the DbSet<T>.Local property    
-            // to use the DbSet<T> as a binding source.   
-            custViewSource.Source = contextZamowienia.zamowienia.Local;
+            //custViewSource.Source = contextZamowienia.zamowienia.Local;
         }
 
         private void zamowieniaDataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -97,13 +91,11 @@ namespace ProjectRC
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
-            contextZamowienia.SaveChanges();
-            custViewSource.View.Refresh();
+            contextZamowienia.zamowienia.Load();
+
+            custViewSource.Source = contextZamowienia.zamowienia.Local;
         }
 
-        private void Button_Click_3(object sender, RoutedEventArgs e)
-        {
 
-        }
     }
 }

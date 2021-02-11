@@ -49,18 +49,23 @@ namespace ProjectRC
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
-
-            dostawa newDostawca = new dostawa()
+            try
             {
-                
-                cena = int.Parse(cenaTextBox.Text),
-                nazwa = nazwaTextBox.Text
+                dostawa newDostawca = new dostawa()
+                {
 
-            };
+                    cena = int.Parse(cenaTextBox.Text),
+                    nazwa = nazwaTextBox.Text
 
-            contextDostawca.dostawa.Add(newDostawca);
-            contextDostawca.SaveChanges();
+                };
+
+                contextDostawca.dostawa.Add(newDostawca);
+                contextDostawca.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Wprowadzono niepoprawne dane", "Uwaga", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
 
         }
 
@@ -78,19 +83,27 @@ namespace ProjectRC
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
-            var cur = custViewSource.View.CurrentItem as dostawa;
+            try
+            {
+                var cur = custViewSource.View.CurrentItem as dostawa;
 
-            var cust = (from c in contextDostawca.dostawa
-                        where c.id_dostawa == cur.id_dostawa
-                        select c).FirstOrDefault();
+                var cust = (from c in contextDostawca.dostawa
+                            where c.id_dostawa == cur.id_dostawa
+                            select c).FirstOrDefault();
 
                 contextDostawca.dostawa.Remove(cust);
-            
-            contextDostawca.SaveChanges();
-            custViewSource.View.Refresh();
+
+                contextDostawca.SaveChanges();
+                custViewSource.View.Refresh();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Zaznacz element do usunięcia", "Uwaga", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
         }
 
-        private void cenaTextBox_TextChanged(object sender, TextChangedEventArgs e)
+
+            private void cenaTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
 
         }

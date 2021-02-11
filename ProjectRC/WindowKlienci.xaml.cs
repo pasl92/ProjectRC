@@ -53,31 +53,45 @@ namespace ProjectRC
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            klienci newKlient = new klienci()
+            try
             {
+                klienci newKlient = new klienci()
+                {
 
-                imie = imieTextBox.Text,
-                nazwisko = nazwiskoTextBox.Text,
-                nr_tel = int.Parse(nr_telTextBox.Text)
+                    imie = imieTextBox.Text,
+                    nazwisko = nazwiskoTextBox.Text,
+                    nr_tel = int.Parse(nr_telTextBox.Text)
 
-            };
+                };
 
-            contextKlienci.klienci.Add(newKlient);
-            contextKlienci.SaveChanges();
+                contextKlienci.klienci.Add(newKlient);
+                contextKlienci.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Wprowadzono niepoprawne dane", "Uwaga", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            var cur = custViewSource.View.CurrentItem as klienci;
+            try
+            {
+                var cur = custViewSource.View.CurrentItem as klienci;
 
-            var cust = (from c in contextKlienci.klienci
-                        where c.id_klienci == cur.id_klienci
-                        select c).FirstOrDefault();
+                var cust = (from c in contextKlienci.klienci
+                            where c.id_klienci == cur.id_klienci
+                            select c).FirstOrDefault();
 
-            contextKlienci.klienci.Remove(cust);
+                contextKlienci.klienci.Remove(cust);
 
-            contextKlienci.SaveChanges();
-            custViewSource.View.Refresh();
+                contextKlienci.SaveChanges();
+                custViewSource.View.Refresh();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Zaznacz element do usunięcia", "Uwaga", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
         }
     }
 }

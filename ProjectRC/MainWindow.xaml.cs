@@ -59,5 +59,10 @@ namespace ProjectRC
         {
 
         }
+
+        private void Button_Click_5(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("WSEI 2021\n Programowanie obietowe C#\n Paweł Sałata 12455", "Informacje o projekcie", MessageBoxButton.OK);
+        }
     }
 }

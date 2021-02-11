@@ -38,11 +38,16 @@
                 <ImageBrush ImageSource="Wed-SavoyaAct-3.jpg" Stretch="None"/>
             </Button.Background>
         </Button>
-        <Label Content="RC SHOP" HorizontalAlignment="Left" Margin="64,286,0,0" VerticalAlignment="Top" Height="102" Width="554" FontSize="72" FontWeight="Bold" Foreground="#FFAECA33" FontFamily="Gill Sans Ultra Bold" Grid.ColumnSpan="3" Grid.Column="1">
+        <Label Content="RC SHOP" HorizontalAlignment="Left" Margin="29,289,0,0" VerticalAlignment="Top" Height="102" Width="554" FontSize="72" FontWeight="Bold" Foreground="#FFAECA33" FontFamily="Gill Sans Ultra Bold" Grid.ColumnSpan="3" Grid.Column="1">
             <Label.Effect>
                 <BlurEffect/>
             </Label.Effect>
         </Label>
+        <Button Content="INFO" HorizontalAlignment="Left" Margin="22,343,0,0" VerticalAlignment="Top" Width="143" Click="Button_Click_5" FontWeight="Bold" FontSize="14" Grid.Column="3">
+            <Button.Background>
+                <ImageBrush/>
+            </Button.Background>
+        </Button>
 
     </Grid>
 </Window>

@@ -54,31 +54,47 @@ namespace ProjectRC
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            produkty newProdukt = new produkty()
+            try
             {
+                produkty newProdukt = new produkty()
+                {
 
-                nazwa = nazwaTextBox.Text,
-                koszt_zakup = int.Parse(koszt_zakupTextBox.Text),
-                cena = int.Parse(cenaTextBox.Text)
+                    nazwa = nazwaTextBox.Text,
+                    koszt_zakup = int.Parse(koszt_zakupTextBox.Text),
+                    cena = int.Parse(cenaTextBox.Text)
 
-            };
+                };
 
-            contextProdukty.produkty.Add(newProdukt);
-            contextProdukty.SaveChanges();
+                contextProdukty.produkty.Add(newProdukt);
+                contextProdukty.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Wprowadzono niepoprawne dane", "Uwaga", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
+
+
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            var cur = custViewSource.View.CurrentItem as produkty;
+            try
+            {
+                var cur = custViewSource.View.CurrentItem as produkty;
 
-            var cust = (from c in contextProdukty.produkty
-                        where c.id_produktu == cur.id_produktu
-                        select c).FirstOrDefault();
+                var cust = (from c in contextProdukty.produkty
+                            where c.id_produktu == cur.id_produktu
+                            select c).FirstOrDefault();
 
-            contextProdukty.produkty.Remove(cust);
+                contextProdukty.produkty.Remove(cust);
 
-            contextProdukty.SaveChanges();
-            custViewSource.View.Refresh();
+                contextProdukty.SaveChanges();
+                custViewSource.View.Refresh();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Zaznacz element do usunięcia", "Uwaga", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
         }
     }
 }

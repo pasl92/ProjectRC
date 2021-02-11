@@ -40,10 +40,9 @@
                 <DataGridTextColumn x:Name="nr_telColumn" Binding="{Binding nr_tel}" Header="nr tel" Width="140"/>
             </DataGrid.Columns>
         </DataGrid>
-        <Button Content="Create" HorizontalAlignment="Left" Margin="62,216,0,0" VerticalAlignment="Top" Height="40" Width="80" Click="Button_Click"/>
-        <Button Content="Read" HorizontalAlignment="Left" Margin="164,216,0,0" VerticalAlignment="Top" Height="40" Width="80" RenderTransformOrigin="0.175,0.475"/>
-        <Button Content="Update" HorizontalAlignment="Left" Margin="62,281,0,0" VerticalAlignment="Top" Height="40" Width="80"/>
-        <Button Content="Delete" HorizontalAlignment="Left" Margin="164,281,0,0" VerticalAlignment="Top" Height="40" Width="80" Click="Button_Click_1"/>
+        <Button Content="Create" HorizontalAlignment="Left" Margin="50,181,0,0" VerticalAlignment="Top" Height="40" Width="230" Click="Button_Click"  FontSize="14" Opacity="0.9"/>
+        <Button Content="Update" HorizontalAlignment="Left" Margin="50,241,0,0" VerticalAlignment="Top" Height="40" Width="230"  FontSize="14" Opacity="0.9"/>
+        <Button Content="Delete" HorizontalAlignment="Left" Margin="50,301,0,0" VerticalAlignment="Top" Height="40" Width="230" Click="Button_Click_1"  FontSize="14" Opacity="0.9"/>
 
     </Grid>
 </Window>
