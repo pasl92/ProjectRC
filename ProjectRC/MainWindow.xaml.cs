@@ -16,10 +16,13 @@ using System.Windows.Shapes;
 namespace ProjectRC
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Logika MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
     {
+        /// <summary>
+        /// Konstruktor MainWindow
+        /// </summary>
         public MainWindow()
         {
             InitializeComponent();

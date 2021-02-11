@@ -16,7 +16,7 @@ using System.Data.Entity;
 namespace ProjectRC
 {
     /// <summary>
-    /// Interaction logic for WindowProdukty.xaml
+    /// Logika WindowProdukty.xaml
     /// </summary>
     public partial class WindowProdukty : Window
     {
@@ -24,6 +24,9 @@ namespace ProjectRC
         CollectionViewSource custViewSource;
         CollectionViewSource ordViewSource;
 
+        /// <summary>
+        /// Konstruktor WindowProdukty
+        /// </summary>
         public WindowProdukty()
         {
             InitializeComponent();
@@ -60,7 +63,7 @@ namespace ProjectRC
                 contextProdukty.produkty.Add(newProdukt);
                 contextProdukty.SaveChanges();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 MessageBox.Show("Wprowadzono niepoprawne dane", "Uwaga", MessageBoxButton.OK, MessageBoxImage.Warning);
             }

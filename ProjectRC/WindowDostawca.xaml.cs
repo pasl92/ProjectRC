@@ -16,7 +16,7 @@ using System.Data.Entity;
 namespace ProjectRC
 {
     /// <summary>
-    /// Interaction logic for WindowDostawca.xaml
+    /// Logika WindowDostawca.xaml
     /// </summary>
     public partial class WindowDostawca : Window
     {
@@ -24,6 +24,9 @@ namespace ProjectRC
         CollectionViewSource custViewSource;
         CollectionViewSource ordViewSource;
 
+        /// <summary>
+        /// Konstruktor WindowDostawca
+        /// </summary>
         public WindowDostawca()
         {
             InitializeComponent();
@@ -90,7 +93,7 @@ namespace ProjectRC
                 contextDostawca.SaveChanges();
                 custViewSource.View.Refresh();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 MessageBox.Show("Zaznacz element do usunięcia", "Uwaga", MessageBoxButton.OK, MessageBoxImage.Warning);
             }

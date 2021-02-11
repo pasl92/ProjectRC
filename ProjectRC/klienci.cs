@@ -11,7 +11,10 @@ namespace ProjectRC
 {
     using System;
     using System.Collections.ObjectModel;
-    
+
+    /// <summary>
+    /// Klasa obietu klienci
+    /// </summary>
     public partial class klienci
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -19,10 +22,25 @@ namespace ProjectRC
         {
             this.zamowienia = new ObservableCollection<zamowienia>();
         }
-    
+
+        /// <summary>
+        /// Property id_klienci
+        /// </summary>
         public int id_klienci { get; set; }
+
+        /// <summary>
+        /// Property imie
+        /// </summary>
         public string imie { get; set; }
+
+        /// <summary>
+        /// Property nazwisko
+        /// </summary>
         public string nazwisko { get; set; }
+
+        /// <summary>
+        /// Property nr_tel
+        /// </summary>
         public Nullable<int> nr_tel { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

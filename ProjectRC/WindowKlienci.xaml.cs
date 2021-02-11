@@ -17,7 +17,7 @@ using System.Data.Entity;
 namespace ProjectRC
 {
     /// <summary>
-    /// Logika okna Klienci 
+    /// Logika WindowKlienci.xaml
     /// </summary>
     public partial class WindowKlienci : Window
     {
@@ -26,7 +26,7 @@ namespace ProjectRC
         CollectionViewSource ordViewSource;
 
         /// <summary>
-        /// Konstruktor okna klienci
+        /// Konstruktor WindowKlienci
         /// </summary>
         public WindowKlienci()
         {
@@ -62,7 +62,7 @@ namespace ProjectRC
                 contextKlienci.klienci.Add(newKlient);
                 contextKlienci.SaveChanges();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 MessageBox.Show("Wprowadzono niepoprawne dane", "Uwaga", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
@@ -83,7 +83,7 @@ namespace ProjectRC
                 contextKlienci.SaveChanges();
                 custViewSource.View.Refresh();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 MessageBox.Show("Zaznacz element do usunięcia", "Uwaga", MessageBoxButton.OK, MessageBoxImage.Warning);
             }

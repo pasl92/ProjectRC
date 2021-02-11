@@ -16,7 +16,7 @@ using System.Data.Entity;
 namespace ProjectRC
 {
     /// <summary>
-    /// Interaction logic for WindowZamowienia.xaml
+    /// Logika WindowZamowienia.xaml
     /// </summary>
     public partial class WindowZamowienia : Window
     {
@@ -24,6 +24,10 @@ namespace ProjectRC
         CollectionViewSource custViewSource;
         CollectionViewSource ordViewSource;
 
+
+        /// <summary>
+        /// Konstruktor WindowZamowienia
+        /// </summary>
         public WindowZamowienia()
         {
             InitializeComponent();
@@ -57,7 +61,7 @@ namespace ProjectRC
                 contextZamowienia.zamowienia.Add(newZamowienia);
                 contextZamowienia.SaveChanges();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 MessageBox.Show("Wprowadzono niepoprawne dane", "Uwaga", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
@@ -80,7 +84,7 @@ namespace ProjectRC
                 custViewSource.View.Refresh();
             }
 
-            catch (Exception ex)
+            catch (Exception)
             {
                 MessageBox.Show("Zaznacz element do usunięcia", "Uwaga", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
