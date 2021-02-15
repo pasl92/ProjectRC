@@ -4,6 +4,16 @@
     "C:\\Users\\PC\\source\\repos\\ProjectRC\\RcShopTest\\RcShopTest.csproj": {}
   },
   "projects": {
+    "C:\\Users\\PC\\source\\repos\\ProjectRC\\ProjectRC\\ProjectRC.csproj": {
+      "restore": {
+        "projectUniqueName": "C:\\Users\\PC\\source\\repos\\ProjectRC\\ProjectRC\\ProjectRC.csproj",
+        "projectName": "ProjectRC",
+        "projectPath": "C:\\Users\\PC\\source\\repos\\ProjectRC\\ProjectRC\\ProjectRC.csproj"
+      },
+      "frameworks": {
+        "net472": {}
+      }
+    },
     "C:\\Users\\PC\\source\\repos\\ProjectRC\\RcShopTest\\RcShopTest.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -27,7 +37,11 @@
         "frameworks": {
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\PC\\source\\repos\\ProjectRC\\ProjectRC\\ProjectRC.csproj": {
+                "projectPath": "C:\\Users\\PC\\source\\repos\\ProjectRC\\ProjectRC\\ProjectRC.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
