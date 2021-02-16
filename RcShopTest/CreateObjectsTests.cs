@@ -66,10 +66,6 @@ namespace RcShopTest
             newZamowienie.id_klienta = 1;
             newZamowienie.id_produktu = 1;
             newZamowienie.data_zakupu = date1;
-            //newZamowienie.klienci.id_klienci = 1;
-            //newZamowienie.klienci.imie = "Test";
-            //newZamowienie.klienci.nazwisko = "Test";
-            //newZamowienie.klienci.nr_tel = 123456789;
 
 
             Assert.AreEqual(newZamowienie.id_zamowienia, 2);
@@ -78,10 +74,6 @@ namespace RcShopTest
             Assert.AreEqual(newZamowienie.id_produktu, 1);
             Assert.AreEqual(newZamowienie.data_zakupu, date1);
 
-            //Assert.AreEqual(newZamowienie.klienci.id_klienci, 1);
-            //Assert.AreEqual(newZamowienie.klienci.id_klienci, "Test");
-            //Assert.AreEqual(newZamowienie.klienci.id_klienci, "Test");
-            //Assert.AreEqual(newZamowienie.klienci.id_klienci, 123456789);
         }
     }
 }

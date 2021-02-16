@@ -23,4 +23,10 @@ insert into dbo.dostawa VALUES
 ('1','kurier','10'),
 ('2','poczta','12'),
 ('3','paczkomat','8'),
-('4','osobiscie','0');
+('4','osobiscie','0')
+
+insert into dbo.klienci VALUES
+('1','Pawel','Kowalski','578000111'),
+('2',null,null,'Jan','Wojcik','678000411'),
+('3',null,null,'Adam','Skrzat','738055511'),
+('4',null,null,'Damian','Wolny','838055444');
