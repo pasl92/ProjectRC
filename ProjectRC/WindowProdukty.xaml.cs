@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Data.Entity;
+using System.Data.Entity.Infrastructure;
 
 namespace ProjectRC
 {
@@ -60,14 +61,21 @@ namespace ProjectRC
 
                 };
 
+                if (newProdukt.koszt_zakup < 0 || newProdukt.cena < 0) throw new ArgumentOutOfRangeException();
                 contextProdukty.produkty.Add(newProdukt);
                 contextProdukty.SaveChanges();
-            }
-            catch (Exception)
+        }
+            catch (FormatException)
             {
                 MessageBox.Show("Wprowadzono niepoprawne dane", "Uwaga", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
+            catch (ArgumentOutOfRangeException)
+            {
+                MessageBox.Show("Wprowadzono ujemną wartość", "Uwaga", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
 
 
         }
@@ -86,13 +94,13 @@ namespace ProjectRC
 
                 contextProdukty.SaveChanges();
                 custViewSource.View.Refresh();
-            }
-            catch (Exception)
+        }
+            catch (DbUpdateException)
             {
                 MessageBox.Show("Zaznacz element do usunięcia", "Uwaga", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
-        }
+}
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {

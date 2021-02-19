@@ -1,17 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Data.Entity;
+using System.Data.Entity.Infrastructure;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
-using System.Data.Entity;
 
 namespace ProjectRC
 {
@@ -60,12 +53,18 @@ namespace ProjectRC
 
                 };
 
+                if (newDostawca.cena < 0) throw new ArgumentOutOfRangeException();
                 contextDostawca.dostawa.Add(newDostawca);
                 contextDostawca.SaveChanges();
             }
-            catch (Exception)
+            catch (FormatException)
             {
                 MessageBox.Show("Wprowadzono niepoprawne dane", "Uwaga", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+            catch (ArgumentOutOfRangeException)
+            {
+                MessageBox.Show("Wprowadzono ujemną wartość", "Uwaga", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
         }
@@ -97,7 +96,7 @@ namespace ProjectRC
                 contextDostawca.SaveChanges();
                 custViewSource.View.Refresh();
             }
-            catch (Exception)
+            catch (DbUpdateException)
             {
                 MessageBox.Show("Zaznacz element do usunięcia", "Uwaga", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;

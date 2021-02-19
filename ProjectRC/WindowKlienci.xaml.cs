@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Data.Entity;
-
+using System.Data.Entity.Infrastructure;
 
 namespace ProjectRC
 {
@@ -63,7 +63,7 @@ namespace ProjectRC
                 contextKlienci.klienci.Add(newKlient);
                 contextKlienci.SaveChanges();
             }
-            catch (Exception)
+            catch (FormatException)
             {
                 MessageBox.Show("Wprowadzono niepoprawne dane", "Uwaga", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
@@ -85,7 +85,7 @@ namespace ProjectRC
                 contextKlienci.SaveChanges();
                 custViewSource.View.Refresh();
             }
-            catch (Exception)
+            catch (DbUpdateException)
             {
                 MessageBox.Show("Zaznacz element do usunięcia", "Uwaga", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
