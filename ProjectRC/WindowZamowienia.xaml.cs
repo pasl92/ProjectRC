@@ -1,18 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
-using System.Data.Entity;
-using System.Data.Entity.Infrastructure;
 
 namespace ProjectRC
 {
@@ -85,9 +76,9 @@ namespace ProjectRC
 
                 newZamowienia.rabat = x;
                 newZamowienia.data_zakupu = data_zakupuDatePicker.SelectedDate;
-                
+
             }
-            catch (FormatException)
+            catch (Exception)
             {
                 MessageBox.Show("Wprowadzono niepoprawne dane", "Uwaga", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
@@ -97,7 +88,7 @@ namespace ProjectRC
             {
                 contextZamowienia.zamowienia.Add(newZamowienia);
                 contextZamowienia.SaveChanges();
-                
+
             }
             catch (Exception)
             {
@@ -124,12 +115,12 @@ namespace ProjectRC
                 custViewSource.View.Refresh();
             }
 
-            catch (DbUpdateException)
+            catch (Exception)
             {
                 MessageBox.Show("Zaznacz element do usunięcia", "Uwaga", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
-}
+        }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {

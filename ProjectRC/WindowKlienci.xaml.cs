@@ -85,7 +85,7 @@ namespace ProjectRC
                 contextKlienci.SaveChanges();
                 custViewSource.View.Refresh();
             }
-            catch (DbUpdateException)
+            catch (Exception)
             {
                 MessageBox.Show("Zaznacz element do usunięcia", "Uwaga", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;

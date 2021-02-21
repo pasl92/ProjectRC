@@ -92,11 +92,10 @@ namespace ProjectRC
                             select c).FirstOrDefault();
 
                 contextDostawca.dostawa.Remove(cust);
-
                 contextDostawca.SaveChanges();
                 custViewSource.View.Refresh();
             }
-            catch (DbUpdateException)
+            catch (Exception)
             {
                 MessageBox.Show("Zaznacz element do usunięcia", "Uwaga", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
